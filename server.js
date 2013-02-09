@@ -1,6 +1,7 @@
 var express = require('express'),
 	lecture = require('./routes/lectures'),
-	user = require('./routes/users');
+	user = require('./routes/users'),
+	userLecture = require('./routes/users_lectures');
 
 var app = express();
 
@@ -22,6 +23,13 @@ app.get('/users/:id', user.findById);
 app.post('/users', user.addUser);
 app.put('/users/:id', user.updateUser);
 app.delete('/users/:id', user.deleteUser);
+
+/* users lecture */
+app.get('/usersLectures', userLecture.findAll);
+app.get('/usersLectures/:id', userLecture.findById);
+app.post('/usersLectures', userLecture.addUserLecture);
+app.put('/usersLectures/:id', userLecture.updateUserLecture);
+app.delete('/usersLectures/:id', userLecture.deleteUserLecture);
 
 app.listen(8080);
 console.log("Server running on port 8080...");

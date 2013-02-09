@@ -16,3 +16,51 @@ CREATE TABLE IF NOT EXISTS meku_users_lectures (
 	user_id int(10) not null,
 	lecture_id int(10) not null
 ) DEFAULT CHARSET = utf8;
+
+CREATE TABLE IF NOT EXISTS meku_lecture_notices {
+	id int(10) not null auto_increment primary key,
+	lecture_id int(10) not null,
+	title varchar(128) not null,
+	body varchar (1024) not null,
+	created date not null
+} DEFAULT CHARSET = utf8;
+
+CREATE TABLE IF NOT EXISTS meku_lecture_materials {
+	id int(10) not null auto_increment primary key,
+	lecture_id int(10) not null,
+	title varchar(128) not null,
+	body varchar (1024) not null,
+	created date not null
+} DEFAULT CHARSET = utf8;
+
+CREATE TABLE IF NOT EXISTS meku_lecture_stdBoards {
+	id int(10) not null auto_increment primary key,
+	lecture_id int(10) not null,
+	title varchar(128) not null,
+	body varchar (1024) not null,
+	created date not null
+} DEFAULT CHARSET = utf8;
+
+CREATE TABLE IF NOT EXISTS meku_lecture_assignments {
+	id int(10) not null auto_increment primary key,
+	lecture_id int(10) not null,
+	title varchar(128) not null,
+	body varchar (1024) not null,
+	created date not null
+} DEFAULT CHARSET = utf8;
+
+CREATE TABLE IF NOT EXISTS meku_lecture_notices {
+	id int(10) not null auto_increment primary key,
+	lecture_id int(10) not null,
+	title varchar(128) not null,
+	body varchar (1024) not null,
+	created date not null
+} DEFAULT CHARSET = utf8;
+
+CREATE TABLE IF NOT EXISTS meku_lecture_teamprojects {
+	id int(10) not null auto_increment primary key,
+	lecture_id int(10) not null,
+	title varchar(128) not null,
+	body varchar (1024) not null,
+	created date not null
+} DEFAULT CHARSET = utf8;

@@ -1,0 +1,843 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR" />
+		<title>�������б� �����н��ý��� - ����</title>
+        <link rel="stylesheet" type="text/css" href="/css/korean/style.css" />
+		<link rel="stylesheet" type="text/css" href="/css/korean/stm.board.css" />
+		<!--[if IE]><style type="text/css">#page_content.logged div.section div.navigation .notice {padding-top: 2px;}#page_content.logged div.section div.navigation .notice a {
+			background-position: 0 0;padding-top: 1px;}.control-navigation-container select {padding: 2px 2px 2px 0;}</style><![endif]-->
+		<!--[if lt IE 9]><style type="text/css">#page_content.logged div.section div.navigation .notice a {background-position: 0 1px;} #page_header.logged .info span {margin-top: 0;}</style><![endif]-->
+		<!--[if IE 9]><style type="text/css">.control-navigation-container li.class-room span {padding-top: 4px !important;padding-bottom: 0 !important;height: 14px !important;}</style><![endif]-->
+		
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="/js/jquery.min.js" ></script>
+<script type="text/javascript" src="/js/common.js" ></script>
+<script type="text/javascript" src="/js/innods/InnoDS.js"></script>
+<script type="text/javascript" src="/js/support.js" ></script>
+<script type="text/javascript" src="/js/jquery.controller.js" charset="euc-kr"></script>
+<script type="text/javascript">
+	var context = '';
+	var context_web = '';
+	var img_src = '/images/korean';
+	var css_src = '/css/korean';
+	var js_src = '/js';
+	var repo = '2013_1';
+	var yyyymmdd = '20130209';
+	var yearterm = '2013_1R';
+	var Enc = '';
+	var language = 'korean';
+	var year = yearterm.split("_")[0];
+	var term = yearterm.split("_")[1];
+	var portal_yn = '';
+	
+</script>
+
+        <script type="text/javascript">
+	        $(function() {
+	        	
+	        	
+	        	
+	        		yearterm = '2013_1R';
+	        	
+	        	fnUrgentNotice();
+	        });
+        </script>
+    </head>
+    
+    <body>
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	<!-- start: page header -->
+    <div id="page_header" class="logged">
+        <div class="wrapper">
+        	<h1 class="emblem-container"><a href="/main.eku" tabindex="1"><img src="/images/korean/misc/emblem2.png" alt="Korea University" width="105" height="28" /></a></h1>
+        	<p class="info">
+            	<img src="/images/korean/icons/man.png" alt="man icon" width="10" height="12" />
+                <span>�ŵ���(sdw2648)�� ȯ���մϴ�.</span>
+            </p>
+            <ul class="main-navigation">
+            	<li><a href="/main.eku" tabindex="1"><img src="/images/korean/menu/header-navigation-01.png" alt="HOME" width="30" height="11" /></a></li>
+            	<li><a href="http://portal.korea.ac.kr" target="_blank" tabindex="1"><img src="/images/korean/menu/header-navigation-02.png" alt="KUPID" width="32" height="11" /></a></li>
+            	<li><a href="http://www.korea.ac.kr" target="_blank" tabindex="1"><img src="/images/korean/menu/header-navigation-03.png" alt="�Ⱦ�ķ�۽�" /></a></li>
+            	<li><a href="http://sejong.korea.ac.kr" target="_blank" tabindex="1"><img src="/images/korean/menu/header-navigation-04.png" alt="����ķ�۽�" /></a></li>
+            	<li><a href="http://ctl.korea.ac.kr" target="_blank" tabindex="1"><img src="/images/korean/menu/header-navigation-05.png" alt="�����н����߿�" /></a></li>
+            	
+            		<li class="btn"><a href="/index.eku?language=en" tabindex="1"><img src="/images/korean/btn/btn-language.png" alt="KOREA" width="58" height="18" /></a></li>
+            	
+            	
+            	<li class="btn last"><a href="/member/member.eku?stm=logout" tabindex="1"><img src="/images/korean/btn/btn-logout.png" alt="�α׾ƿ�" width="58" height="18" /></a></li>
+            </ul>
+        </div>
+    </div>
+	<!-- end: page header -->
+	
+    
+	<!-- start: page content -->
+    <div id="page_content" class="logged">
+        <div class="wrapper ">
+        	<div class="sidebar">
+            	<h2 class="sidebar-heading"><img src="/images/korean/misc/sidebar-heading.png" alt="EKU" /></h2>
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				<!-- start: sidebar menu -->
+            	<div id="sidebar_menu">
+                    <ul class="sidebar-navigation">
+                    	<li ><a href="/notice/noticeList.eku" tabindex="20">EKU ��������</a></li>
+                <!-- 
+                        note: sample selected; 
+                        	
+                        <li class="selected"><a href="#" tabindex="20">EKU ��������</a></li>
+                        																		-->
+                      	
+	                    	<li>
+	                        	<a href="#" tabindex="21">��������</a>
+	                            <ul class="sub-menu">
+	                            	<li ><a href="/schedule/schedule.eku" tabindex="21">��������</a></li>
+	                            	<li ><a href="/schedule/schedule.eku?stm=daily" tabindex="21">�Ϻ�����</a></li>
+	                            	<li ><a href="/schedule/schedule.eku?stm=table" tabindex="21">���ǽð�ǥ</a></li>
+	                            </ul>
+	                        </li>
+                        
+                    	<li ><a href="/faq/frequentlyList.eku" tabindex="21">EKU ���ǻ���</a></li>
+                    </ul>
+                </div>
+                <!-- end: sidebar menu -->
+                
+                <!-- start: quick service -->
+                <div id="quick_service">
+                	<ul>
+                    	<li>
+                        	<a href="http://open.korea.ac.kr" target="_blank" tabindex="30">
+                            	<img src="/images/korean/icons/open-ku-2.png" alt="open KU icon" width="30" height="28" />
+                                <img src="/images/korean/misc/open-ku-2.png" alt="open KU " />
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <!-- end: quick service -->
+                <!-- start: help desk -->
+                <div id="help_desk">
+                    <h2><img src="/images/korean/misc/help-desk-heading.png" alt="EKU ����ó | �����н����߿�" /></h2>
+                    <a>
+	                    <img src="/images/korean/icons/phone.png" alt="phone icon" width="15" height="13" />
+	                    <img src="/images/korean/misc/02-3290-1585.png" alt="02-3290-1585" width="79" height="12" />
+                    </a>
+                    <a href="mailto:eku@korea.ac.kr" tabindex="30">
+                        <img src="/images/korean/icons/mail.png" alt="email icon" width="15" height="13" />
+                        <span>eku@korea.ac.kr</span>
+                    </a>
+                    
+	                   	<a href="javascript:fnHelp('S','korean')" tabindex="30">
+	                        <img src="/images/korean/misc/eku-guide.png" alt="EKU �̿� ���̵�" />
+	                    </a>
+	                
+                    
+                   	<a href="javascript:innomp_install_guide();" tabindex="30">
+                        <img src="/images/korean/btn/btn_upload.png" alt="���� ���δ� ���� ��ġ" />
+                    </a>
+                </div>
+                <!-- end: help desk -->
+                <!-- start: family site -->
+                <div id="family_site">
+                    <h2><img src="/images/korean/misc/family-site-heading.png" alt="EKU ���� ����Ʈ" /></h2>
+                    <a href="#" tabindex="30" class="btn-toggle"><img src="/images/korean/btn/btn-toggle-family-site-off.png" alt="open" width="63" height="18" /></a>
+                    <ul class="family-site-links">
+                    	<li><a href="http://ctl.korea.ac.kr" tabindex="30" target="_blank">�����н����߿�(CTL)</a></li>
+                    	<li><a href="http://ocw.korea.ac.kr" tabindex="30" target="_blank">Open Course Ware(OCW)</a></li>
+                    	<li><a href="http://gclass.korea.ac.kr/system/login?domain=gclass.korea.ac.kr&next=%2Fadmin%3Fdomain%3Dgclass.korea.ac.kr&set-lang=ko" tabindex="30" target="_blank">G-Class(Adobe Connect Pro)</a></li>
+                    	<li><a href="http://uku.korea.ac.kr:8077" tabindex="30" target="_blank">G-Class(Live Classroom)</a></li>
+                    </ul>
+                </div>
+                <!-- end: family site -->
+            </div>
+            
+            <!-- start: section -->
+            
+            <div class="section">
+            	
+            	<!-- start: page control navigation -->
+           		<div class="page-control-navigation">
+            		
+                	<div class="controls">
+                    	<img class="heading" src="/images/korean/misc/information-heading.png" alt="�����н� Information" />
+						<label id="information">
+							
+                        	
+		                		<ul class="control-navigation-container">
+	                				
+		                            <li class="status">
+		                            	<form id="Form_div" action="/main.eku" method="get">
+		                                	<input type="hidden" name="stm" value="changeMembercd"/>
+											<select name="member_cd" tabindex="31" title="���Ѻ���">
+												
+												
+													
+													
+														<option value="CS" selected>�л�</option>
+													
+												
+			                                </select>
+			                                <input type="image" tabindex="31" src="/images/korean/btn/btn-status.png" alt="���Ѻ���" />
+		                               	</form>
+		                            </li>
+		                            
+			                            <li class="semester">
+			                            	<form id="Form_yearterm" action="/main.eku" method="get">
+			                                	<input type="hidden" name="stm" value="changeYearterm"/>
+												<select name="yearterm" tabindex="31" title="�б�">
+													
+														<option value="2013_1R" selected>2013�⵵ 1�б�</option>
+													
+														<option value="2012_2R" >2012�⵵ 2�б�</option>
+													
+														<option value="2012_1R" >2012�⵵ 1�б�</option>
+													
+														<option value="2011_2R" >2011�⵵ 2�б�</option>
+													
+														<option value="2011_1R" >2011�⵵ 1�б�</option>
+													
+														<option value="2010_2R" >2010�⵵ 2�б�</option>
+													
+														<option value="2010_1R" >2010�⵵ 1�б�</option>
+													
+													
+												</select>
+			                                	<input type="image" tabindex="31" src="/images/korean/btn/btn-semester.png" alt="�б⺯��" />
+			                                </form>
+			                            </li>
+		                            <li class="class-room">
+		                            	<span>2013�⵵ 1�б� �򰭰���</span>
+		                                <a href="#" tabindex="31"><img src="/images/korean/btn/btn-drop-arrow.png" alt="drop arrow" /></a>
+		                                <div class="class-room-menu">
+		                                	<div class="content-left">
+		                                    	<ul class="menu">
+			                                    	
+														<li>
+															
+																<a href="javascript:goClassroom('CNCE150_05_0136_N_4728_�������а���_INTRODUCTION TO INFORMATION AND SOCIETY_318242_2010210104_N_N_2');">�������а��� (CNCE150_05) </a>
+															
+															
+														</li>
+													
+														<li>
+															
+																<a href="javascript:goClassroom('CNCE220_02_0136_N_4728_�����̷�(����)_THEORY OF COMPUTATION(English)_111373_2010210104_N_N_3');">�����̷�(����) (CNCE220_02) </a>
+															
+															
+														</li>
+													
+														<li>
+															
+																<a href="javascript:goClassroom('CNCE301_00_0136_N_4728_����������_DATA COMMUNICATIONS_111150_2010210104_N_N_3');">���������� (CNCE301_00) </a>
+															
+															
+														</li>
+													
+														<li>
+															
+																<a href="javascript:goClassroom('CNCE320_00_0136_N_4728_�����ͺ��̽�_DATABASE_110454_2010210104_N_N_3');">�����ͺ��̽� (CNCE320_00) </a>
+															
+															
+														</li>
+													
+														<li>
+															
+																<a href="javascript:goClassroom('CNCE405_00_0136_N_4728_�����н�_MACHINE LEARNING_111149_2010210104_N_N_3');">�����н� (CNCE405_00) </a>
+															
+															
+														</li>
+													
+														<li>
+															
+																<a href="javascript:goClassroom('CNCE407_00_0136_N_4728_��������_WIRELESS MOBILE COMMUNICATIONS_111189_2010210104_N_N_3');">�������� (CNCE407_00) </a>
+															
+															
+														</li>
+													
+		                                        </ul>
+		                                    </div>
+		                                </div>
+		                            </li>
+		                            
+		                        </ul>
+	               			
+                        </label>
+                    </div>
+            		
+                    <div class="navigation">
+                    	<div class="notice">
+                    		<label id="urgentNotice">
+                    			
+                        	</label>
+                        </div>
+                    	<div class="breadcrumbs">
+                        	
+                        	
+                        		<a href="/main.eku">����(2013-1�б�)</a>
+                        	
+                        	
+                        	
+                        </div>
+                    </div>
+                </div>
+            	<!-- end: page control navigation -->
+
+                
+                            
+            	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+buildingInfo = function(){
+	var url = "http://www.korea.ac.kr/jsp/sugang/guide/college/E002.html";
+	
+	window.open(url, 'buildingInfo', 'width=800px,height=700px,scrollbars=yes');
+};
+</script>
+                <div class="article">
+                    
+                    <h2>���Ǹ���</h2>
+                    
+                    
+                    
+                    <table id="lecture_list" class="data-table" width="100%" border="0" cellspacing="0" cellpadding="0">
+                    	<thead>
+                          <tr>
+                            <th scope="col" width="">���Ǹ�</th>
+                            <th scope="col" width="10%">�м���ȣ</th>
+                            <th scope="col" width="5%">�й�</th>
+                            <th scope="col" width="5%">����</th>
+                            <th scope="col" width="35%">���ǽ� ����</th>
+                            <th scope="col" width="10%">���ǰ�ȹ��</th>
+                          </tr>
+                        </thead>
+                    	<tbody>
+						  
+						    <tr>
+								<td>
+									
+										<a href="javascript:goClassroom('CNCE150_05_0136_N_4728_�������а���_INTRODUCTION TO INFORMATION AND SOCIETY_318242_2010210104_N_N_2');">�������а���</a>
+										
+									
+									
+								</td>
+	                            <td>CNCE150</td>
+	                            <td>05</td>
+	                            <td>2</td>
+	                            <td>&nbsp;ȭ(7-8) ������ 108��(7) ������ 108</td>
+	                            <td><a href="javascript:fnClassroomPlanSpt('2013', '1R', '0136', '4728', 'CNCE150', '05', '�������а���', '')"><img src="/images/korean/icons/info.png" alt="information" /></a></td>
+                            </tr>
+						  
+						    <tr>
+								<td>
+									
+										<a href="javascript:goClassroom('CNCE220_02_0136_N_4728_�����̷�(����)_THEORY OF COMPUTATION(English)_111373_2010210104_N_N_3');">�����̷�(����)</a>
+										
+									
+									
+								</td>
+	                            <td>CNCE220</td>
+	                            <td>02</td>
+	                            <td>3</td>
+	                            <td>&nbsp;��(6) �������Ű�601��(6) �������Ű�601</td>
+	                            <td><a href="javascript:fnClassroomPlanSpt('2013', '1R', '0136', '4728', 'CNCE220', '02', '�����̷�(����)', '')"><img src="/images/korean/icons/info.png" alt="information" /></a></td>
+                            </tr>
+						  
+						    <tr>
+								<td>
+									
+										<a href="javascript:goClassroom('CNCE301_00_0136_N_4728_����������_DATA COMMUNICATIONS_111150_2010210104_N_N_3');">����������</a>
+										
+									
+									
+								</td>
+	                            <td>CNCE301</td>
+	                            <td>00</td>
+	                            <td>3</td>
+	                            <td>&nbsp;��(3) �������Ű�202��(4-5) �������Ű�202</td>
+	                            <td><a href="javascript:fnClassroomPlanSpt('2013', '1R', '0136', '4728', 'CNCE301', '00', '����������', '')"><img src="/images/korean/icons/info.png" alt="information" /></a></td>
+                            </tr>
+						  
+						    <tr>
+								<td>
+									
+										<a href="javascript:goClassroom('CNCE320_00_0136_N_4728_�����ͺ��̽�_DATABASE_110454_2010210104_N_N_3');">�����ͺ��̽�</a>
+										
+									
+									
+								</td>
+	                            <td>CNCE320</td>
+	                            <td>00</td>
+	                            <td>3</td>
+	                            <td>&nbsp;ȭ(6) �������Ű�202��(6) �������Ű�202</td>
+	                            <td><a href="javascript:fnClassroomPlanSpt('2013', '1R', '0136', '4728', 'CNCE320', '00', '�����ͺ��̽�', '')"><img src="/images/korean/icons/info.png" alt="information" /></a></td>
+                            </tr>
+						  
+						    <tr>
+								<td>
+									
+										<a href="javascript:goClassroom('CNCE405_00_0136_N_4728_�����н�_MACHINE LEARNING_111149_2010210104_N_N_3');">�����н�</a>
+										
+									
+									
+								</td>
+	                            <td>CNCE405</td>
+	                            <td>00</td>
+	                            <td>3</td>
+	                            <td>&nbsp;��(2) �������Ű�206��(2) �������Ű�206</td>
+	                            <td><a href="javascript:fnClassroomPlanSpt('2013', '1R', '0136', '4728', 'CNCE405', '00', '�����н�', '')"><img src="/images/korean/icons/info.png" alt="information" /></a></td>
+                            </tr>
+						  
+						    <tr>
+								<td>
+									
+										<a href="javascript:goClassroom('CNCE407_00_0136_N_4728_��������_WIRELESS MOBILE COMMUNICATIONS_111189_2010210104_N_N_3');">��������</a>
+										
+									
+									
+								</td>
+	                            <td>CNCE407</td>
+	                            <td>00</td>
+	                            <td>3</td>
+	                            <td>&nbsp;��(4) �������Ű�B101��(4-5) �������Ű�B101</td>
+	                            <td><a href="javascript:fnClassroomPlanSpt('2013', '1R', '0136', '4728', 'CNCE407', '00', '��������', '')"><img src="/images/korean/icons/info.png" alt="information" /></a></td>
+                            </tr>
+						  
+						  
+                    	</tbody>
+                    </table>
+				</div>
+              	  
+	                <div class="article" id="schedule">
+	                	<h2>
+	                    	<span class="heading">�������� :</span>
+	                    	<span><a href="/schedule/schedule.eku?stm=daily"><img src="/images/korean/misc/today.png" alt="today" /></a></span>
+	                    	<span><a href="/schedule/schedule.eku"><img src="/images/korean/misc/month.png" alt="��������" /></a></span>
+	                    	<span><a href="/schedule/schedule.eku?stm=table"><img src="/images/korean/misc/time-table.png" alt="���ǽð�ǥ" /></a></span>
+	                    </h2>
+	                    <div class="date-selection home-location">
+	                    	<a href="/main.eku?year=2013&amp;month=02&amp;day=08"><img src="/images/korean/btn/btn-prev.png" alt="previous" /></a>
+	                        <span>2013-02-09 (��)</span>
+	                    	<a href="/main.eku?year=2013&amp;month=02&amp;day=10"><img src="/images/korean/btn/btn-next.png" alt="next" /></a>
+	                    </div>
+	                    <table class="data-table" width="100%" border="0" cellspacing="0" cellpadding="0">
+	                        <thead>
+	                          <tr>
+	                            <th scope="col" width="10%">��ȣ</th>
+	                            <th scope="col" width="">���Ǹ�</th>
+	                            <th scope="col" width="30%">���ǽ� ����</th>
+	                          </tr>
+	                        </thead>
+	                        <tbody>
+	                        	 
+	                        	 
+	                       		
+	                       		
+	                       		
+		                        	
+		                        		
+		                        	
+		                        
+	                        	
+	                        		<tr>
+	                        			<td colspan="3">���� ������ �����ϴ�.</td>
+	                        		</tr>
+	                        	
+	                        </tbody>
+	                    </table>
+	                </div>
+                
+                
+                <div class="article other">
+                	<div id="notice" class="block">
+                    	<h2>EKU ��������</h2>
+                        <a href="/notice/noticeList.eku" class="btn-more"><img src="/images/korean/btn/btn-more.png" alt="more" width="42" height="14" /></a>
+                        <ul>
+                        	
+	                       		<li>
+	                       			<em class="important-red02">&nbsp;</em>
+	                       			<em class="with-notice01">&nbsp;</em>
+	                        		<a href="/notice/noticeView.eku?seq_no=154">[����] 2013�г⵵ 1�б� �򰭽�û ���� �ȳ�</a>
+	                        		
+	                            	<span class="right">12.12.28</span>
+	                            </li>
+                        	
+	                       		<li>
+	                       			<em class="important-red02">&nbsp;</em>
+	                       			<em class="with-notice01">&nbsp;</em>
+	                        		<a href="/notice/noticeView.eku?seq_no=134">[����] ����,��������,�ű԰���,�򰭽�û �� �л� ���� ���Ǵ� �ش��а� �л������ο��� ó���ص帳�ϴ�.</a>
+	                        		
+	                            	<span class="right">12.06.22</span>
+	                            </li>
+                        	
+	                       		<li>
+	                       			
+	                       			<em class="with-notice01">&nbsp;</em>
+	                        		<a href="/notice/noticeView.eku?seq_no=139">[����] ������ �������� EKU Ȱ�� �ȳ�</a>
+	                        		
+	                            	<span class="right">12.08.24</span>
+	                            </li>
+                        	
+	                       		<li>
+	                       			
+	                       			
+	                        		<a href="/notice/noticeView.eku?seq_no=151">��2012�� ���л� IT���� ���� �� �̿� ���������ǿ� �������ּ���!</a>
+	                        		
+	                            	<span class="right">12.12.14</span>
+	                            </li>
+                        	
+	                       		<li>
+	                       			
+	                       			
+	                        		<a href="/notice/noticeView.eku?seq_no=148">[����] �����б� ����/���� ���� ���Ǵ� �л������η� �����ٶ��ϴ�. </a>
+	                        		
+	                            	<span class="right">12.12.03</span>
+	                            </li>
+                        	
+                        	                        	
+                        </ul>
+                    </div>
+                	<div id="q_and_a" class="block">
+                    	<h2>EKU ���ǻ���</h2>
+                        <a href="/faq/frequentlyList.eku" class="btn-more"><img src="/images/korean/btn/btn-more.png" alt="more" width="42" height="14" /></a>
+                        <ul>
+                        	
+	                       		<li>
+	                        		<a href="/faq/frequentlyView.eku?seq_no=3615&amp;page_num=1">[�л�] �����ڷ����� ������ ���� ������ �ȵ˴ϴ�.</a>
+	                        		<em class="new">&nbsp;</em>
+	                            	<span class="right">
+	                                	<span class="status ">
+	                                		
+	                                			
+	                                			����
+	                                		
+	                                	</span>
+	                                	<span class="writter">������</span>
+	                                	<span class="date">13.02.08</span>
+	                                </span>
+	                            </li>
+                        	
+	                       		<li>
+	                        		<a href="/faq/frequentlyView.eku?seq_no=3607&amp;page_num=1">[������] �⼮�δ� ������ ������ �� �ֳ���?</a>
+	                        		
+	                            	<span class="right">
+	                                	<span class="status ">
+	                                		
+	                                			
+	                                			����
+	                                		
+	                                	</span>
+	                                	<span class="writter">������</span>
+	                                	<span class="date">13.01.30</span>
+	                                </span>
+	                            </li>
+                        	
+	                       		<li>
+	                        		<a href="/faq/frequentlyView.eku?seq_no=3595&amp;page_num=1">[�л�] ���Ǹ� ����(�����Ұ�-����:�̵���)���� ������ ���쿡�� ��� �ϳ���?</a>
+	                        		
+	                            	<span class="right">
+	                                	<span class="status ">
+	                                		
+	                                			
+	                                			����
+	                                		
+	                                	</span>
+	                                	<span class="writter">������</span>
+	                                	<span class="date">13.01.29</span>
+	                                </span>
+	                            </li>
+                        	
+	                       		<li>
+	                        		<a href="/faq/frequentlyView.eku?seq_no=3594&amp;page_num=1">[��ü] ��������,�򰭽�û,�������� ���� �Ҽ� �л������ο� �������ּ���.</a>
+	                        		
+	                            	<span class="right">
+	                                	<span class="status ">
+	                                		
+	                                			
+	                                			����
+	                                		
+	                                	</span>
+	                                	<span class="writter">������</span>
+	                                	<span class="date">13.01.29</span>
+	                                </span>
+	                            </li>
+                        	
+	                       		<li>
+	                        		<a href="/faq/frequentlyView.eku?seq_no=3593&amp;page_num=1">[��ü] ���б��ɿ��� ȭ�� �߸����� �߻��� ��� �ؾ� �ϳ���?</a>
+	                        		
+	                            	<span class="right">
+	                                	<span class="status ">
+	                                		
+	                                			
+	                                			����
+	                                		
+	                                	</span>
+	                                	<span class="writter">������</span>
+	                                	<span class="date">13.01.29</span>
+	                                </span>
+	                            </li>
+                        	
+                        	                       	                        	
+                        </ul>                        
+                    </div>
+                </div>
+     
+            	
+            </div>
+            <!-- end: section -->
+            
+	            <!-- start: return to top -->
+	            <div id="return_to_top">
+	            	<a href="#top"><img src="/images/korean/btn/btn-return-to-top.png" alt="Go To Top" /></a>
+	            </div>
+            	<!-- end: return to top -->
+            
+            <img class="bottom-right-bg" src="/images/korean/bg/content-bottom.png" alt="bg-helper" width="23" height="210" />
+        </div>
+    </div>
+	<!-- end: page content -->
+    
+   	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<iframe name="iframehidden" id="iframehidden" frameborder="0" width="100%" height="0" title="processor"></iframe>
+<form id="Form_classroom" action="/classroom/main.eku" method="post">
+<input type="hidden" name="stm" value="classroom"/>
+<input type="hidden" name="classroom_data" value=""/>
+</form>
+<form id="Form_quiz" action="/classroom/quiz/quiz.eku" method="post" target="quiz_win">
+<input type="hidden" name="stm" value=""/>
+<input type="hidden" name="title" value=""/>
+<input type="hidden" name="std_id" value=""/>
+<input type="hidden" name="std_nm" value=""/>
+<input type="hidden" name="paper_no" value=""/>
+<input type="hidden" name="preview" value=""/>
+</form>
+<form id="Form_survey" action="/classroom/survey/surveyPaper.eku" method="post" target="survey_win">
+<input type="hidden" name="title" value=""/>
+<input type="hidden" name="paper_no" value=""/>
+</form>
+<form id="Form_classroom_plan" action="http://infodepot.korea.ac.kr/lecture1/lecsubjectPlanView.jsp" method="post" target="plan_win">
+<input type="hidden" name="year" value="">
+<input type="hidden" name="term" value="">
+<input type="hidden" name="grad_cd" value="">
+<input type="hidden" name="dept_cd" value="">
+<input type="hidden" name="cour_cd" value="">
+<input type="hidden" name="cour_cls" value="">
+<input type="hidden" name="cour_nm" value="">
+<input type="hidden" name="col_cd" value="">
+</form>
+<form id="Form_vod" action="/classroom/material/materialVodView.eku" method="post" target="vod_win">
+<input type="hidden" name="p_url" value=""/>
+<input type="hidden" name="p_width" value=""/>
+<input type="hidden" name="p_height" value=""/>
+</form>
+<form id="Form_comment" action="/comment.eku" method="post">
+<input type="hidden" name="stm" value="delete"/>
+<input type="hidden" name="tabid" value=""/>
+<input type="hidden" name="seq" value=""/>
+<input type="hidden" name="bdseq" value=""/>
+<input type="hidden" name="page_num" value=""/>
+<input type="hidden" name="search_type" value=""/>
+<input type="hidden" name="search_keyword" value=""/>
+</form>
+<div id="hiddendiv"><form id="hiddenform"></form></div>
+
+	
+	<!-- start: page footer -->
+    <div id="page_footer">
+        <div class="wrapper">
+            <ul class="footer-menu">
+                <li><a href="javascript:footer1();" tabindex="100"><img src="/images/korean/menu/footer-menu1-01.png" alt="�����������޹�ħ" /></a></li>
+                <li><a href="javascript:footer2();" tabindex="100"><img src="/images/korean/menu/footer-menu1-02.png" alt="��������" /></a></li>
+                <li><img src="/images/korean/menu/footer-menu1-03.png" alt="EKU ���� (�����н����߿�) 02-3290-1585" /></li>
+            </ul>
+            <p><img src="/images/korean/misc/address.png" alt="(����ķ�۽�) �泲 ���ⱺ ��ġ���� ������ 2511 �������б� ����ķ�۽� TEL. 041-860-1114" /></p>
+            <p><img src="/images/korean/misc/copyright.png" alt=" COPYRIGHT &copy; 2012 KOREA UNIVERSITY. ALL RIGHTS RESERVED." /></p>
+            
+            
+            
+        	<p class="validator-logo">
+            	<a href="http://validator.w3.org/check?uri=referer" target="_blank"><img src="/images/korean/misc/xhtml-1.0.png" alt="xhtml 1.0 logo" width="80" height="15" /></a>
+            	<a href="http://jigsaw.w3.org/css-validator/check/referer" target="_blank"><img src="/images/korean/misc/css-3.0.png" alt="css 3.0 logo" width="80" height="15" /></a>
+            	<a href="http://www.w3.org/WAI/WCAG1A-Conformance" target="_blank"><img src="/images/korean/misc/wcag-2.0.png" alt="wcag 2.0 logo" width="80" height="15" /></a>
+            </p>
+        </div>
+    </div>
+	<!-- end: page footer -->
+	
+   	
+    </body>
+</html>
