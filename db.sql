@@ -2,12 +2,12 @@ use meku;
 
 CREATE TABLE  IF NOT EXISTS meku_users (
 	id int(10) not null auto_increment primary key,
-	hash varchar(32) not null
+	notify boolean default true
 ) DEFAULT CHARSET = utf8;
 
 CREATE TABLE IF NOT EXISTS meku_lectures (
 	id int(10) not null auto_increment primary key,
-	number varchar(10) not null,
+	number varchar(10) not null UNIQUE,
 	name varchar(100) not null
 ) DEFAULT CHARSET = utf8;
 
@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS meku_lecture_notices {
 	lecture_id int(10) not null,
 	title varchar(128) not null,
 	body varchar (1024) not null,
-	created date not null
+	created datetime not null
 } DEFAULT CHARSET = utf8;
 
 CREATE TABLE IF NOT EXISTS meku_lecture_materials {
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS meku_lecture_materials {
 	lecture_id int(10) not null,
 	title varchar(128) not null,
 	body varchar (1024) not null,
-	created date not null
+	created datetime not null
 } DEFAULT CHARSET = utf8;
 
 CREATE TABLE IF NOT EXISTS meku_lecture_stdBoards {
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS meku_lecture_stdBoards {
 	lecture_id int(10) not null,
 	title varchar(128) not null,
 	body varchar (1024) not null,
-	created date not null
+	created datetime not null
 } DEFAULT CHARSET = utf8;
 
 CREATE TABLE IF NOT EXISTS meku_lecture_assignments {
@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS meku_lecture_assignments {
 	lecture_id int(10) not null,
 	title varchar(128) not null,
 	body varchar (1024) not null,
-	created date not null
+	created datetime not null
 } DEFAULT CHARSET = utf8;
 
 CREATE TABLE IF NOT EXISTS meku_lecture_notices {
@@ -54,7 +54,7 @@ CREATE TABLE IF NOT EXISTS meku_lecture_notices {
 	lecture_id int(10) not null,
 	title varchar(128) not null,
 	body varchar (1024) not null,
-	created date not null
+	created datetime not null
 } DEFAULT CHARSET = utf8;
 
 CREATE TABLE IF NOT EXISTS meku_lecture_teamprojects {
@@ -62,5 +62,5 @@ CREATE TABLE IF NOT EXISTS meku_lecture_teamprojects {
 	lecture_id int(10) not null,
 	title varchar(128) not null,
 	body varchar (1024) not null,
-	created date not null
+	created datetime not null
 } DEFAULT CHARSET = utf8;

@@ -46,12 +46,12 @@ exports.findAll = function(req, res) {
 
 exports.addUser = function(req, res) {
 	var User = eval('(' + JSON.stringify(req.body) + ')');
-	console.log('Adding User: ' + User.number + User.name);
+	console.log('Adding User: ' + User);
 
 	connection.query(
 		'INSERT into ' + table + ' ' +
-		'SET number = ?, name = ?',
-		[User.number, User.name],
+		'SET notify = ?',
+		[User.notify],
 		function(err, rows, fields) {
 
 			if (err) {

@@ -1,0 +1,17 @@
+{
+	"name": "MEKU.server",
+	"version": "0.0.1",
+	"description": "Server application for MEKU",
+	"private": true,
+	"dependencies": {
+		"express": ">= 3.1.0",
+		"mysql": "2.0.0-alpha7",
+		"request": ">= 2.12.0",
+		"async": ">= 0.2.4",
+		"execsync": ">= 0.0.1",
+		"cheerio": ">= 0.10.6"
+	},
+	"engines": {
+		"node": ">= 0.8.19"
+	}
+}
