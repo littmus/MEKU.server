@@ -5,7 +5,7 @@ var request = require('request'),
 	cheerio = require('cheerio');
 
 var EKU_BASE = 'http://neweku.korea.ac.kr',
-	EKU_LOGIN = 'https://neweku.korea.ac.kr:member/memberLogin.eku',
+	EKU_LOGIN = 'https://neweku.korea.ac.kr:443/member/memberLogin.eku',
 	EKU_CLASSROOM = EKU_BASE + '/classroom/main.eku';
 
 exports.login = function(id, password) {
@@ -26,10 +26,10 @@ exports.login = function(id, password) {
 
 			return result;
 		}
-	]);
+	);
 };
 
-exports.getLectureList = function(id, password) {
+exports.getLectureList = function(id, password, cb) {
 	var lectures = '{"lectures": [';
 
 	async.waterfall([
@@ -86,11 +86,12 @@ exports.getLectureList = function(id, password) {
 			});
 		}],
 		function(err, result) {
-			if(err) throw err;
-
-			console.log(result);
-			//return JSON.parse(result);
-			return result;
+			if(err)
+				cb(err, null);
+			else {
+				cb(null, result);	
+			}
+			
 		}
 	);
 };

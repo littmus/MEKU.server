@@ -1,6 +1,9 @@
-var mysql = require('mysql');
+var mysql = require('mysql'),
+	async = require('async'),
+	meku = require('../meku');
+
 var connection = mysql.createConnection({
-	host : 'localhost',
+	host : '192.168.147.139',
 	user : 'root',
 	password : 'ted705',
 	database : 'meku',
@@ -48,19 +51,38 @@ exports.addUser = function(req, res) {
 	var User = eval('(' + JSON.stringify(req.body) + ')');
 	console.log('Adding User: ' + User);
 
-	connection.query(
-		'INSERT into ' + table + ' ' +
-		'SET notify = ?',
-		[User.notify],
-		function(err, rows, fields) {
+	async.auto([
+		function(callback) {
+			connection.query(
+				'INSERT into ' + table + ' ' +
+				'SET notify = ?',
+				[User.notify],
+				function(err, rows, fields) {
 
-			if (err) {
+					if (err) throw err;
+					
+					console.log(rows.insertId);
+					callback(null);
+				}
+			);
+		},
+		function(callback) {
+			meku.getLectureList(User.user_id, User.passwd,
+				function(err, result) {
+					if (err) throw err;
+					callback(null, result);
+				});
+		}],
+		function(err, result) {
+
+			console.log(result);
+
+			if(err)
 				res.send(err);
-			}
-			else {
-				res.send(rows.insertId);
-			}
-	});
+			else
+				res.send(result[1]);
+		}
+	);
 };
 
 exports.updateUser = function(req, res) {

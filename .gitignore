@@ -13,6 +13,7 @@ results
 
 npm-debug.log
 
+build
 node_modules
 result.html
 encoded.html

@@ -8,7 +8,7 @@
 		"mysql": "2.0.0-alpha7",
 		"request": ">= 2.12.0",
 		"async": ">= 0.2.4",
-		"execsync": ">= 0.0.1",
+		"exec-sync": ">= 0.1.5",
 		"cheerio": ">= 0.10.6"
 	},
 	"engines": {

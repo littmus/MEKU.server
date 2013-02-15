@@ -6,6 +6,7 @@ var express = require('express'),
 var app = express();
 
 app.configure(function() {
+	app.use(express.favicon());
 	app.use(express.logger('dev'));
 	app.use(express.bodyParser());
 });
