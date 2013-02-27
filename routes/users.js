@@ -49,38 +49,90 @@ exports.findAll = function(req, res) {
 
 exports.addUser = function(req, res) {
 	var User = eval('(' + JSON.stringify(req.body) + ')');
-	console.log('Adding User: ' + User);
 
-	async.auto([
+	async.waterfall([
 		function(callback) {
 			connection.query(
 				'INSERT into ' + table + ' ' +
 				'SET notify = ?',
 				[User.notify],
 				function(err, rows, fields) {
-
 					if (err) throw err;
-					
-					console.log(rows.insertId);
-					callback(null);
+					callback(null, rows);
 				}
 			);
 		},
-		function(callback) {
+		function(user, callback) {
 			meku.getLectureList(User.user_id, User.passwd,
 				function(err, result) {
 					if (err) throw err;
-					callback(null, result);
+					callback(null, user, result);
 				});
+		},
+		function(user, list, callback) {
+			var lectureList = JSON.parse(list).lectures;
+
+			console.log(lectureList);
+
+			async.each(lectureList, function(lecture, cb) {
+				console.log(lecture.name);
+
+				async.waterfall([
+					function(callback) {
+
+						connection.query(
+							'INSERT into meku_lectures ' +
+							'SET number = ?, name = ?',
+							[lecture.number, lecture.name],
+							function(err, rows, fields) {
+
+								if (err) {
+									if (err.code == 'ER_DUP_ENTRY') {
+										connection.query(
+											'SELECT id ' + 
+											'FROM meku_lectures ' +
+											'WHERE number = ?',
+											[lecture.number],
+											function(err, rows, fields) {
+												if (err) throw err;
+												callback(null, rows[0].id);
+											}
+										);
+									}
+									else throw err;
+								}
+								else {
+									callback(null, rows.insertId);	
+								}
+							}
+						);
+					},
+					function(lecture_id, callback) {
+						connection.query(
+							'INSERT into meku_users_lectures ' + 
+							'SET user_id = ?, lecture_id = ?',
+							[user.insertId, lecture_id],
+							function(err, rows, fields) {
+								if(err) throw err;
+								callback(null);
+							}
+						);
+					}],
+					function(err, result) {
+						if (err) cb(err);
+						cb(null);
+					}
+				);
+			}, function(err) {
+				if (err) throw err;
+				callback(null, user);
+			});
 		}],
 		function(err, result) {
-
-			console.log(result);
-
 			if(err)
 				res.send(err);
 			else
-				res.send(result[1]);
+				res.send(result);
 		}
 	);
 };

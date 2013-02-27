@@ -8,7 +8,8 @@ CREATE TABLE  IF NOT EXISTS meku_users (
 CREATE TABLE IF NOT EXISTS meku_lectures (
 	id int(10) not null auto_increment primary key,
 	number varchar(10) not null UNIQUE,
-	name varchar(100) not null
+	name varchar(100) not null,
+	semester varchar(7) not null
 ) DEFAULT CHARSET = utf8;
 
 CREATE TABLE IF NOT EXISTS meku_users_lectures (

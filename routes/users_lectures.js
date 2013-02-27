@@ -35,9 +35,10 @@ exports.findAll = function(req, res) {
 		console.log('Get User ' + userId + ' Lectures');
 
 		connection.query(
-			'SELECT * ' +
-			'FROM ' + table + ' ' + 
-			'WHERE user_id = ?',
+			'SELECT a.* ' +
+			'FROM ' + table + ' as b, meku_lectures as a ' + 
+			'WHERE a.id = b.lecture_id and b.user_id = ? ' +
+			'ORDER BY a.number',
 			[userId],
 			function(err, rows, fields) {
 

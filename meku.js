@@ -86,7 +86,7 @@ exports.getLectureList = function(id, password, cb) {
 			});
 		}],
 		function(err, result) {
-			if(err)
+			if (err)
 				cb(err, null);
 			else {
 				cb(null, result);	
@@ -96,6 +96,29 @@ exports.getLectureList = function(id, password, cb) {
 	);
 };
 
+exports.changeSemester = function(semester) {
+	async.waterfall([
+		function(callback) {
+			request.get(EKU_BASE, function(err, response, body) {
+				if (err) throw err;
+				
+				callback(null, body);
+			}).form({
+				'stm': 'changeYearterm',
+				'yearterm': semester,
+				'x': '19',
+				'y': '21'
+			}); 
+		}],
+		function(err, result) {
+			if (err) throw err;
+
+			return result;
+		}
+	);
+
+};
+
 exports.goClassroom = function(classNumber, className) {
-	
-}
+		
+};
