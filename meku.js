@@ -6,7 +6,8 @@ var request = require('request'),
 
 var EKU_BASE = 'http://neweku.korea.ac.kr',
 	EKU_LOGIN = 'https://neweku.korea.ac.kr:443/member/memberLogin.eku',
-	EKU_CLASSROOM = EKU_BASE + '/classroom/main.eku';
+	EKU_CLASSROOM = EKU_BASE + '/classroom/main.eku',
+	EKU_NOTICE = EKU_BASE + '/classroom/notice/noticeList.eku';
 
 exports.login = function(id, password) {
 	var cookie = "";
@@ -22,7 +23,7 @@ exports.login = function(id, password) {
 			});
 		}],
 		function(err, result) {
-			if (err) throw err;
+			if (err) ;
 
 			return result;
 		}
@@ -43,15 +44,22 @@ exports.getLectureList = function(id, password, cb) {
 			});
 		},
 		function(location, callback) {
-			request({
-				method: 'GET',
-				uri: location,
-				encoding: null
-				}, function(err, response, body) {
-					if (err) throw err;
-					if (response.statusCode == 200)
-						callback(null, body);
-			});
+			console.log(location);
+
+			if (location.search("fail=Y") == -1) {	
+				request({
+					method: 'GET',
+					uri: location,
+					encoding: null
+					}, function(err, response, body) {
+						if (err) throw err;
+						if (response.statusCode == 200)
+							callback(null, body);
+				});	
+			}
+			else
+				callback(true, null);
+			
 		},
 		function(body, callback) {
 			fs.writeFile(__dirname + '/result.html', body, function(err) {
@@ -89,6 +97,7 @@ exports.getLectureList = function(id, password, cb) {
 			if (err)
 				cb(err, null);
 			else {
+				console.log(result);
 				cb(null, result);	
 			}
 			
@@ -120,5 +129,63 @@ exports.changeSemester = function(semester) {
 };
 
 exports.goClassroom = function(classNumber, className) {
-		
+	async.waterfall([
+		function(callback) {
+			request.post(EKU_CLASSROOM, function(err, response, body){
+				if (err) throw err;
+				
+				callback(null, response.headers.location);
+			}).form({
+				'stm': 'classroom',
+				'classroom_data': 'CNCE220_02_0136_N_4728_계산이론(영강)_THEORY OF COMPUTATION(English)_111373_2010210104_N_N_3'
+			});
+		},
+		function(location, callback) {
+			request.get(location, function(err, response, body) {
+				if(err) throw err;
+				console.log(body);
+
+				callback(null, body);
+			})
+			/*
+			if (location.search("fail=Y") == -1) {	
+				request({
+					method: 'GET',
+					uri: location,
+					encoding: null
+					}, function(err, response, body) {
+						if (err) throw err;
+						console.log(response);
+						if (response.statusCode == 200)
+							callback(null, body);
+				});
+			}
+			else
+				callback(true, null);
+			*/
+		}
+		],
+		function(err, result) {
+			if (err) throw err;
+			
+			return result;
+		}
+	);
+};
+
+exports.getNotice = function() {
+	async.waterfall([
+		function(callback) {
+			request.get(EKU_NOTICE, function(err, response, body) {
+				if (err) throw err;
+				console.log(body);
+				callback(null, body);
+			});
+		}],
+		function(err, result) {
+			if (err) throw err;
+
+			return result;
+		}
+	);
 };

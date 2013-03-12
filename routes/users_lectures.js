@@ -1,13 +1,9 @@
-var mysql = require('mysql');
-var connection = mysql.createConnection({
-	host : '192.168.147.139',
-	user : 'root',
-	password : 'ted705',
-	database : 'meku',
-});
-var table = 'meku_users_lectures';
+var mysql = require('mysql'),
+	config = require('../config');
 
-connection.connect();
+var connection = config.DB_CONN;
+
+var table = 'meku_users_lectures';
 
 exports.findById = function(req, res) {
 	var id = req.params.id;

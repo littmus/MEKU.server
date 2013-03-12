@@ -1,16 +1,13 @@
 var mysql = require('mysql'),
 	async = require('async'),
+	config = require('../config'),
 	meku = require('../meku');
 
-var connection = mysql.createConnection({
-	host : '192.168.147.139',
-	user : 'root',
-	password : 'ted705',
-	database : 'meku',
-});
+var connection = config.DB_CONN;
+
 var table = 'meku_users';
 
-connection.connect();
+//connection.connect();
 
 exports.findById = function(req, res) {
 	var id = req.params.id;
@@ -63,11 +60,13 @@ exports.addUser = function(req, res) {
 			);
 		},
 		function(user, callback) {
+			console.log(user);
 			meku.getLectureList(User.user_id, User.passwd,
 				function(err, result) {
 					if (err) throw err;
 					callback(null, user, result);
-				});
+				}
+			);
 		},
 		function(user, list, callback) {
 			var lectureList = JSON.parse(list).lectures;
